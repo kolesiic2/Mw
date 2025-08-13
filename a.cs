@@ -20,6 +20,7 @@ public class Program {
 		    CreateNoWindow = true
 		};
 		
-		System.Diagnostics.Process.Start(savePath);
+		System.Diagnostics.Process.Start(processStartInfo);
     }
 }
+
